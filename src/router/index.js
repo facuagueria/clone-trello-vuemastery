@@ -10,7 +10,7 @@ const routes = [
     children: [
       {
         path: "/task/:id",
-        name: "Task",
+        name: "task",
         component: Task,
       },
     ],

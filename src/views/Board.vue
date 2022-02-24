@@ -8,12 +8,13 @@
         :columnIndex="$columnIndex"
         :board="board"
       />
+
       <div class="column flex">
         <input
           type="text"
-          v-model="newColumnName"
           class="p-2 mr-2 flex-grow"
           placeholder="+ New Column Name"
+          v-model="newColumnName"
           @keyup.enter="createColumn"
         />
       </div>
@@ -27,9 +28,10 @@
 <script>
 import { mapState } from "vuex";
 import BoardColumn from "@/components/BoardColumn";
-
 export default {
-  components: { BoardColumn },
+  components: {
+    BoardColumn,
+  },
   data() {
     return {
       newColumnName: "",
@@ -38,7 +40,7 @@ export default {
   computed: {
     ...mapState(["board"]),
     isTaskOpen() {
-      return this.$route.name === "Task";
+      return this.$route.name === "task";
     },
   },
   methods: {
@@ -60,7 +62,7 @@ export default {
   @apply p-4 bg-green-500 h-full overflow-auto;
 }
 .task-bg {
-  @apply relative h-full;
+  @apply fixed inset-0;
   background: rgba(0, 0, 0, 0.5);
 }
 </style>
