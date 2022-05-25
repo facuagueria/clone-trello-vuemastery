@@ -59,7 +59,7 @@ export default {
 
 <style lang="css">
 .board {
-  @apply p-4 bg-green-500 h-full overflow-auto;
+  @apply p-4 bg-green-700 h-full overflow-auto;
 }
 .task-bg {
   @apply fixed inset-0;
